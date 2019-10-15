@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Create User</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="returnHomePage()" icon-only>
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+    <ion-list>
+        <ion-item>
+            <ion-label fixed>Username</ion-label>
+            <ion-input type="text" [(ngModel)]='Name'></ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button color="greySky" icon-start class="createchoose" (click)='createNewUser()'>
+        <ion-icon name="beer"></ion-icon>
+        Create
+    </button>
+</ion-content>

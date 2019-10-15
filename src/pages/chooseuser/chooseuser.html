@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Choose User</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="returnHomePage()" icon-only>
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+    <ion-list inset>
+        <ion-item-sliding #item *ngFor="let User of Users">
+            <button ion-item (click)='goToUserDashboard($event, User)'>
+                {{ User.UserName }}
+            </button>
+            <ion-item-options side="right">
+                <button ion-button color="danger" (click)="deleteUserClicked($event, User)">
+                    <ion-icon name="trash"></ion-icon>
+                    Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>

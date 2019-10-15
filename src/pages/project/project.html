@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>My Projects</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+    <ion-list inset>
+        <ion-card *ngFor="let Project of Projects">
+            <button ion-item (click)="goToTaskPage($event, Project)" (press)="presentActions($event, Project)">
+                <h1>{{ Project.ProjectName }}</h1>
+                <h3>{{ Project.ProjectDescription }}</h3>
+            </button>
+        </ion-card>
+    </ion-list>
+    <ion-fab bottom right>
+        <button ion-fab mini icon-only color="greySky" (click)="addProject()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

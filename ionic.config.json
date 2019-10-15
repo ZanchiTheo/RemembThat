@@ -1,0 +1,7 @@
+{
+  "name": "RemembThat",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

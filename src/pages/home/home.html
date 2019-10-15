@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>RemembThat</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-card>
+    <img src="assets/imgs/ChecklistNotepad.jpg" id="mainImg" />
+  </ion-card>
+  <button ion-button color="greySky" icon-start class="createchoose" (click)='showChooseUser()'>
+    <ion-icon name="person"></ion-icon>
+    Choose a user
+  </button>
+  <button ion-button color="greySky" icon-start class="createchoose" (click)='showCreateUser()'>
+    <ion-icon name="person-add"></ion-icon>
+    Create a user
+  </button>
+  <ion-fab bottom left>
+    <button ion-fab color="greySky" mini icon-only (click)="returnWelcomePage()">
+      <ion-icon name="arrow-round-back"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

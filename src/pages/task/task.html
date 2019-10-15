@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Tasks</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="presentPopover($event)">
+                <ion-icon name="more"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+    <ion-list inset>
+        <ion-item-sliding #item *ngFor="let Task of Tasks">
+            <button ion-item (click)="checkOrNot($event, Task)">
+                <h2 class='{{ Task.TaskChecked }}'>{{ Task.TaskName }}</h2>
+                <h3 class='{{ Task.TaskChecked }}'>{{ Task.TaskDescription }}</h3>
+            </button>
+            <ion-item-options side="right">
+                <button ion-button color="danger" (click)="deleteTask($event, Task)">
+                    <ion-icon name="trash"></ion-icon>
+                    Delete
+                </button>
+                <button ion-button color="greySky" (click)="modifieTask($event, Task)">
+                    <ion-icon name="build"></ion-icon>
+                    Modifie
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+    <ion-fab bottom right>
+        <button ion-fab mini icon-only color="greySky" (click)="addTask()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

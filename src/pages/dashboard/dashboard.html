@@ -1,0 +1,68 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Dashboard</ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="returnHomePage()" color="primary">
+                Sign Out
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card id="UserImgCard">
+        <img src="assets/imgs/UserPicture.png" id="UserImg" />
+        <div class="card-title">Ready to work ?</div>
+    </ion-card>
+    <div id="infoUser">
+        <ion-card id="projectsCard">
+            <ion-card-header>
+                <ion-icon name="speedometer"></ion-icon>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-list>
+                    <ion-item>
+                        You have a total of
+                        <span class="count">{{ numberProject }}</span> projects
+                    </ion-item>
+                    <ion-item>
+                        You have a total of
+                        <span class="count">{{ numberTasks }}</span> tasks
+                    </ion-item>
+                    <ion-item>
+                        <span class="count">{{ numberTasksNotChecked }}</span> taks aren't done !
+                    </ion-item>
+                </ion-list>
+                <button ion-button (click)="goToProjectPage()">
+                    <ion-icon name="folder-open"></ion-icon>
+                </button>
+            </ion-card-content>
+        </ion-card>
+        <ion-card id="listsCard">
+            <ion-card-header>
+                <ion-icon name="speedometer"></ion-icon>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-list>
+                    <ion-item>
+                        You have a total of
+                        <span class="count">{{ numberList }}</span> List
+                    </ion-item>
+                    <ion-item>
+                        You have a total of
+                        <span class="count">{{ numberItems }}</span> items
+                    </ion-item>
+                    <ion-item>
+                        <span class="count">{{ numberItemsNotChecked }}</span> items aren't done !
+                    </ion-item>
+                </ion-list>
+                <button ion-button (click)="goToListPage()">
+                    <ion-icon name="folder-open"></ion-icon>
+                </button>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>
